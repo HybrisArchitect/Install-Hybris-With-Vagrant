@@ -96,7 +96,7 @@ sed -i '286s/#mysql/mysql/' project.properties
 
 echo "Downloading and installing the MySQL Driver.."
 cd $HYBRISDIR/hybris/bin/platform/lib/dbdriver
-wget https://github.com/HybrisArchitect/Install-Hybris-With-Vagrant/raw/master/mysql-connector-java-5.1.23-bin.jar
+wget https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master/mysql-connector-java-5.1.23-bin.jar
 
 cd $HYBRISDIR/hybris/bin/platform
 . ./setantenv.sh
