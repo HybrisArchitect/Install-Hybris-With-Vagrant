@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
- Vagrant.configure("2") do |config|
+  Vagrant.configure("2") do |config|
  
   config.vm.box = "centos/7"
 
@@ -23,12 +23,12 @@
   config.vm.post_up_message = "
               
               ###############################
-              #                             #
-              #       Hybris has been       #
-              #     succesfully installed   #
+              #      Congratulations!       #
+              #      Hybris has been        #
+              #   successfully installed    #
               ###############################                           
-
-                  HybrisArchitect.com
+                    HybrisArchitect.com 
+                  
   "
   #The primary shell script that will install SAP Hybris and its dependencies
   config.vm.provision "shell", path: "bootstrap.sh", privileged: true 
