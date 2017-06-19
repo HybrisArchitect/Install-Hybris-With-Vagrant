@@ -43,7 +43,7 @@ echo "Verifying MySQL Installation..."
 yum repolist enabled | grep "mysql.*-community.*"
 yum -y install mysql-server
 
-echo "Starting the MySQL daemon........................................"
+echo "Starting the MySQL daemon.."
 service mysqld start
 service mysqld status
 echo "Changing the MySQL password..."
@@ -70,12 +70,11 @@ unzip hybris-commerce-suite-6.3.0.1.zip
 
 echo "Removing the Hybris Installation zip file.."
 rm hybris-commerce-suite-6.3.0.1.zip
-echo "Changing into the bin/platform directory..."
+echo "Changing into the bin/platform directory.."
 cd $HYBRISDIR/hybris/bin/platform
 
 
-echo "Update the project.properties file to use mysql and our credentials..."
-
+echo "Update the project.properties file to disable the default HSLDB database.."
 sed -i '247s/db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
 sed -i '248s/db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
 sed -i '249s/db.username=sa/#db.username=sa/' project.properties
@@ -83,6 +82,7 @@ sed -i '250s/db.password=/#db.password=/' project.properties
 sed -i '251s/db.tableprefix=/#db.tableprefix=/' project.properties
 sed -i '252s/hsqldb.usecachedtables=true/#hsqldb.usecachedtables=true/' project.properties
 
+echo "Update the project.properties file to use MySQL and specific database credentials.."
 sed -i '280s/#db/db/' project.properties
 sed -i "280s/<dbname>/$HYBRISDB/" project.properties
 sed -i '281s/#db/db/' project.properties
@@ -101,7 +101,7 @@ wget https://github.com/HybrisArchitect/MySQL-Connector-Java-Download/raw/master
 cd $HYBRISDIR/hybris/bin/platform
 . ./setantenv.sh
 
-echo "Performing Ant Clean All..	"
+echo "Performing Ant Clean All.."
 ant clean all -Dinput.template=develop
 echo "Starting the Hybris Server.."
 ./hybrisserver.sh
