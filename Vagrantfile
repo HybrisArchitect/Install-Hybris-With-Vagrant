@@ -20,6 +20,9 @@
   #set up the synch folder between the host and the guest
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
+  #The primary shell script that installs SAP Hybris and its dependencies
+  config.vm.provision "shell", path: "bootstrap.sh", privileged: true 
+
   config.vm.post_up_message = "
               
               ###############################
@@ -27,10 +30,7 @@
               #      Hybris has been        #
               #   successfully installed    #
               ###############################                           
-                    HybrisArchitect.com 
-                  
+                    HybrisArchitect.com                   
   "
-  #The primary shell script that will install SAP Hybris and its dependencies
-  config.vm.provision "shell", path: "bootstrap.sh", privileged: true 
 
 end
