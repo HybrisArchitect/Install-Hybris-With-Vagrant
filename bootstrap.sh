@@ -34,7 +34,7 @@ export JRE_HOME=/opt/jdk1.8.0_131/jre
 echo "Setting PATH Variable"..
 export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
 
-echo "Installing MySql.."
+echo "Installing MySQL.."
 mkdir $MYSQLDIR
 cd MYSQLDIR
 wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
