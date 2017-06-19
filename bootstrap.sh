@@ -56,9 +56,9 @@ mysqladmin -u root -p`echo $MYSQL_TEMP_PWD` password $HYBRISDBPASSWORD
 mysql -uroot -p$HYBRISDBPASSWORD -e "CREATE DATABASE $HYBRISDB;"
 mysql -uroot -p$HYBRISDBPASSWORD -e 'Show Databases;'
 
-echo "Copy Hybris install from host to guest machine.."
+echo "Copying the Hybris installatiion from from host to guest machine.."
 
-echo "Creating Hybris directory..."
+echo "Creating Hybris home directory..."
 mkdir $HYBRISDIR
 cd $HYBRISDIR
 cp /vagrant/hybris-commerce-suite-6.3.0.1.zip $HYBRISDIR/
