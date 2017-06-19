@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
 
   config.vm.provider "virtualbox" do |vb|
-      vb.name = "hybris-tutorial-vm"
+      vb.name = "hybris-vagrant-vm"
       vb.memory = "4096" 
     end 
 
