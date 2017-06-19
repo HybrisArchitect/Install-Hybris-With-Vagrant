@@ -1,14 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
+ Vagrant.configure("2") do |config|
  
   config.vm.box = "centos/7"
 
   config.vm.provider "virtualbox" do |vb|
       vb.name = "hybris-vagrant-vm"
       vb.memory = "4096" 
-    end 
+  end 
 
   ##config.vm.network :private_network, ip: '192.168.9.99'  
   #Open Hybris's default ports 9001 and 9002
@@ -31,8 +31,6 @@ Vagrant.configure("2") do |config|
                   HybrisArchitect.com
   "
   #The primary shell script that will install SAP Hybris and its dependencies
-  config.vm.provision "shell", path: "bootstrap.sh", privileged: true
- 
- 
+  config.vm.provision "shell", path: "bootstrap.sh", privileged: true 
 
 end
