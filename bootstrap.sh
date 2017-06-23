@@ -73,7 +73,7 @@ echo "Changing into the bin/platform directory.."
 cd $HYBRISDIR/hybris/bin/platform
 
 
-echo "Update the project.properties file to disable the default HSLDB database.."
+echo "Update the project.properties file to disable the default hsqldb database.."
 sed -i '247s/db.url=jdbc:hsqldb:file/#db.url=jdbc:hsqldb:file/' project.properties
 sed -i '248s/db.driver=org.hsqldb.jdbcDriver/#db.driver=org.hsqldb.jdbcDriver/' project.properties
 sed -i '249s/db.username=sa/#db.username=sa/' project.properties
